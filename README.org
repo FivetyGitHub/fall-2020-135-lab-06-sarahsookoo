@@ -1,11 +1,8 @@
 * Fall 2020 - Lab 06
 
-* Last name:
-
-* First name:
-
-* GitHub username:
-
+* Last name: Sookoo
+* First name: Sarah
+* GitHub username: sarahsookoo
 * Notes:
 
 
