@@ -4,6 +4,7 @@
 #include "caesar.h"
 #include "viginere.h"
 #include "decrypt.h"
+#include "decode.h"
 
 // add your tests here
 TEST_CASE("all lower case"){
@@ -40,4 +41,10 @@ TEST_CASE("mixed"){
   CHECK(decryptCaesar(encryptCaesar("Way To Go!" , 5), 5) == "Way To Go!");
   CHECK(decryptCaesar(encryptCaesar("HeLlO wOrLd!", 8), 8) == "HeLlO wOrLd!");
   CHECK(decryptCaesar(encryptCaesar("Sarah A. Sookoo", 3), 3) == "Sarah A. Sookoo");
+}
+
+TEST_CASE("testing decode"){
+  CHECK(decode("khoor pb qdph lv vdudk vrrnrr") == "hello my name is sarah sookoo");
+  CHECK(decode("bfd yt lt") == "way to go");
+  CHECK(decode("krz duh brx") == "how are you");
 }

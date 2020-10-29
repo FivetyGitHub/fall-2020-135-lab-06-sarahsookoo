@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 #include "caesar.h"
 
 char shiftChar(char c, int rshift){

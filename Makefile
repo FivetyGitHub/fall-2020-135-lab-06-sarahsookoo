@@ -1,27 +1,26 @@
+main: main.o funcs.o caesar.o viginere.o decrypt.o decode.o
+	g++ -o main main.o funcs.o caesar.o viginere.o decrypt.o decode.o
 
+tests: tests.o caesar.o viginere.o decrypt.o decode.o
+	g++ -o tests tests.o caesar.o viginere.o decrypt.o decode.o
 
-main: main.o funcs.o 
-	g++ -o main main.o funcs.o 
+funcs.o: funcs.cpp funcs.h
 
-tests: tests.o funcs.o caesar.o viginere.o decrypt.o 
-	g++ -o tests tests.o funcs.o caesar.o viginere.o decrypt.o
+caesar.o: caesar.cpp caesar.h
 
-funcs.o: funcs.cpp funcs.h doctest.h
+viginere.o: viginere.cpp viginere.h
 
-caesar.o: caesar.cpp caesar.h doctest.h
+decrypt.o: decrypt.cpp decrypt.h
 
-viginere.o: viginere.cpp viginere.h doctest.h
+decode.o: decode.cpp decode.h
 
-decrypt.o: decrypt.cpp decrypt.h doctest.h
+main.o: main.cpp funcs.h caesar.h viginere.h decrypt.h decode.h
 
-main.o: main.cpp funcs.h doctest.h
-
-tests.o: tests.cpp  doctest.h
+tests.o: tests.cpp doctest.h caesar.h viginere.h decrypt.h decode.h
 
 clean:
-	rm -f main.o tests.o funcs.o caesar.o viginere.o decrypt.o
+	rm -f main.o tests.o funcs.o caesar.o viginere.o decrypt.o decode.o
 
 help:
-	@echo  make main : make executable named main
+	@echo make main : make executable named main
 	@echo make tests : make test suite named tests
-
