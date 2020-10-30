@@ -3,7 +3,7 @@
 * Last name: Sookoo
 * First name: Sarah
 * GitHub username: sarahsookoo
-* Notes: 
+* Notes: I had to reference some of the repos to get a better understanding and a template. Also decode doesnt quite work, it always returns the first string in the array and I'm not sure why
 * General instructions:
 - Fill in your name and GitHub username on top.
 - Use the Notes section to add any notes to the instructor.
