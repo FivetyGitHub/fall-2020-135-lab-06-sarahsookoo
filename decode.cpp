@@ -4,6 +4,15 @@
 #include "decrypt.h"
 #include "decode.h"
 
+/*int numChar(std::string str, char letter){
+  int num = 0;
+  for(int i=0; i<str.length(); i++){
+    if (str[i] == letter || str[i] == char((int)letter - 32)){
+	num++;
+    }
+  }
+  return num;
+  }*/
 std::string decode(std::string str){ //str is an encrypted string
   double freq[] = {8.2, 1.5, 2.8, 4.3, 13, 2.2, 2, 6.1, 7, .15, .77, 4, 2.4, 6.7,
 		  7.5, 1.9, .095, 6, 6.3, 9.1, 2.8, .98, 2.4, .15, 2, .074}; //freq of each letter as a percent
