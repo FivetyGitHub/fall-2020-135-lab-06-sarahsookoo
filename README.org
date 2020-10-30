@@ -3,10 +3,7 @@
 * Last name: Sookoo
 * First name: Sarah
 * GitHub username: sarahsookoo
-* Notes:
-
-
-  
+* Notes: I followed a similar template to Alexandros, I tried implementing another function but I got confused on how to use it so i commented it out
 * General instructions:
 - Fill in your name and GitHub username on top.
 - Use the Notes section to add any notes to the instructor.
