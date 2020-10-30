@@ -13,7 +13,6 @@ int numChar(std::string str, char letter){
   }
   return num;
   }
-
 std::string decode(std::string str){ //str is an encrypted string
   double freq[] = {8.2, 1.5, 2.8, 4.3, 13, 2.2, 2, 6.1, 7, .15, .77, 4, 2.4, 6.7,
 		  7.5, 1.9, .095, 6, 6.3, 9.1, 2.8, .98, 2.4, .15, 2, .074}; //freq of each letter as a percent
@@ -27,13 +26,13 @@ std::string decode(std::string str){ //str is an encrypted string
    std::string phr = guesses[i];
    for (int i = 97; i<123; i++){
      num = numChar(phr, char(i));
-     letters.push_back((num/str.length()) *100);
+     letters.emplace_back(num/str.length() *100);
    }
-   double dis;
+   double dis = 0;
    for (int j=0; j<26; j++){
-     dis = dis + pow(freq[i] - letters[i], 2);
+     dis = dis + pow(freq[j] - letters[j], 2);
+    eachDis[j] = sqrt(dis);
    }
-   eachDis[i] = sqrt(dis);
  }
      /* for (int j=0; j<26; j++){
      numChar[j] = (count[j] / sen.length())*100;//makes it a percent
@@ -48,11 +47,12 @@ std::string decode(std::string str){ //str is an encrypted string
 
  int lowest = 0;
  for (int i=0; i<26; i++){
-   //   std::cout << guesses[i] <<std::endl;
+   //       std::cout << guesses[i] <<std::endl;
    if (eachDis[i] < eachDis[lowest]){
      lowest = i;
    }
  }
  // std::cout <<lowest<< std::endl;
  return guesses[lowest];
+ //return eachDis[lowest+2];
  }
