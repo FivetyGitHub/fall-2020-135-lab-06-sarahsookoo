@@ -13,26 +13,27 @@ int numChar(std::string str, char letter){
   }
   return num;
   }
+
 std::string decode(std::string str){ //str is an encrypted string
   double freq[] = {8.2, 1.5, 2.8, 4.3, 13, 2.2, 2, 6.1, 7, .15, .77, 4, 2.4, 6.7,
 		  7.5, 1.9, .095, 6, 6.3, 9.1, 2.8, .98, 2.4, .15, 2, .074}; //freq of each letter as a percent
  std::string guesses [26]; //26 possible sentences
- double eachDis[26] = {0};
- double num = 0;
- std::vector<double> letters;
- 
+ double eachDis[26] = {0}; //the distance for each sentence with shift i applied to the the param
+ double amountOfChars = 0;
+
  for (int i=0; i<26; i++){
    guesses[i] = decryptCaesar(str, i); //decrypts the string creating 26 possible sentences
    std::string phr = guesses[i];
-   for (int i = 97; i<123; i++){
-     num = numChar(phr, char(i));
-     letters.emplace_back(num/str.length() *100);
+   std::vector<double> letters;
+   for (int k = 97; k<123; k++){
+     amountOfChars = numChar(phr, char(k));
+     letters.emplace_back(amountOfChars/str.length() *100);
    }
    double dis = 0;
    for (int j=0; j<26; j++){
      dis = dis + pow(freq[j] - letters[j], 2);
-    eachDis[j] = sqrt(dis);
    }
+   eachDis[i] = sqrt(dis);
  }
      /* for (int j=0; j<26; j++){
      numChar[j] = (count[j] / sen.length())*100;//makes it a percent

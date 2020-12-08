@@ -44,6 +44,7 @@ TEST_CASE("mixed"){
 }
 
 TEST_CASE("testing decode"){
+  CHECK(decode("Hjjvykpun av hss ruvdu shdz vm hcphapvu, aolyl pz uv dhf h ill zovbsk il hisl av msf.")=="According to all known laws of aviation, there is no way a bee should be able to fly.");
   CHECK(decode("khoor pb qdph lv vdudk vrrnrr") == "hello my name is sarah sookoo");
   CHECK(decode("bfd yt lt") == "way to go");
   CHECK(decode("krz duh brx") == "how are you");
